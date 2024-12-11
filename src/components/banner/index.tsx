@@ -1,5 +1,5 @@
 "use client";
-import './StyleCarrosel.css'
+import './StyleCarousel.css'
 import { register } from 'swiper/element/bundle'
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,7 +9,7 @@ import 'swiper/css/effect-fade';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Autoplay } from 'swiper/modules';
 
-export default function Carrosel(){
+export default function Carousel(){
   register(); //ao utilizar elementos customizados da biblioteca, tenho q registrar eles manualmente uma vez
 
   // lista de dicionarios para cada imagem utilizada no carrosel
