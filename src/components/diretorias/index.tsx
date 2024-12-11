@@ -3,7 +3,7 @@ import './StyleDiretorias.css'
 import Image from 'next/image'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel } from 'swiper/modules';
+import { Mousewheel, EffectCoverflow } from 'swiper/modules';
 import React from "react";
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -55,12 +55,21 @@ export default function Diretorias(){
     <div className='containerDiretoria'>
 
       <Swiper //onde é definido todos os parametros
-      modules={[Mousewheel]}
-      grabCursor={true} 
-      loop={true} 
-      slidesPerView={3}
-      direction={'horizontal'}
-      mousewheel={true}
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        coverflowEffect={{
+          rotate: 45,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        direction={'horizontal'}
+        mousewheel = {true}
+        modules={[EffectCoverflow, Mousewheel]}
+        loop={true}
       >
         {img.map((item) =>( //elementos que vao estar no swiper (no caso a lista de dicionarios criada anteriormente)
           <SwiperSlide >
